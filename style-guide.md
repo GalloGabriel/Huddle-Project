@@ -1,3 +1,6 @@
+// Para compilar Sass em Css abra o cmd vá na pasta styles do projeto
+// e cole: sass --watch main.scss:main.css
+
 # Front-end Style Guide
 
 ## Layout
