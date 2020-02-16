@@ -1,0 +1,60 @@
+// Colors
+$pinkColor: hsl(322, 100%, 66%);
+$paleCyan: hsl(193, 100%, 96%);
+$darkCyan: hsl(192, 100%, 9%);
+$grayBlue: hsl(208, 11%, 55%);
+
+// fonts
+$tittleFont: 'Poppins', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
+
+// Tamanhos
+@mixin mobile() {
+  @media (min-width: 0px) and (max-width: 440px) {@content;}
+}
+
+@mixin desktop() {
+  @media (min-width: 441px) and (max-width: 1440px) {@content;}
+}
+
+// Mixins
+@mixin headerSection {
+  background-image: url(../images/bg-hero-mobile.svg);
+  background-color: $paleCyan;
+  width: 100%;
+  border: 2px solid black;
+}
+
+@mixin gridHeader {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 100%;
+  margin-left: 10%;
+}
+
+@mixin buttonHeader {
+  font-family: $bodyFont;
+  width: 170px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+
+// Includes
+@include mobile{
+  .header-section { @include headerSection; }
+  .grid-header { @include gridHeader; }
+  .button-header { @include buttonHeader; }
+  .footer-section { background-color: $grayBlue}
+}
+
+@include desktop{
+  .header-section { @include headerSection; }
+  .grid-header { @include gridHeader; }
+  .button-header { @include buttonHeader; }
+  .footer-section { background-color: $grayBlue}
+}

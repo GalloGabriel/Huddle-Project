@@ -1,1 +1,64 @@
+@media (min-width: 0px) and (max-width: 440px) {
+  .header-section {
+    background-image: url(../images/bg-hero-mobile.svg);
+    background-color: #ebfbff;
+    width: 100%;
+    border: 2px solid black;
+  }
 
+  .grid-header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 100%;
+    margin-left: 10%;
+  }
+
+  .button-header {
+    font-family: "Open Sans", sans-serif;
+    width: 170px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+  }
+
+  .footer-section {
+    background-color: #808d99;
+  }
+}
+@media (min-width: 441px) and (max-width: 1440px) {
+  .header-section {
+    background-image: url(../images/bg-hero-mobile.svg);
+    background-color: #ebfbff;
+    width: 100%;
+    border: 2px solid black;
+  }
+
+  .grid-header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 100%;
+    margin-left: 10%;
+  }
+
+  .button-header {
+    font-family: "Open Sans", sans-serif;
+    width: 170px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+  }
+
+  .footer-section {
+    background-color: #808d99;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
