@@ -9,9 +9,6 @@ $tittleFont: 'Poppins', sans-serif;
 $bodyFont: 'Open Sans', sans-serif;
 
 // Tamanhos
-@mixin mobile() {
-  @media (min-width: 0px) and (max-width: 440px) {@content;}
-}
 
 @mixin desktop() {
   @media (min-width: 441px) and (max-width: 1440px) {@content;}
@@ -21,40 +18,70 @@ $bodyFont: 'Open Sans', sans-serif;
 @mixin headerSection {
   background-image: url(../images/bg-hero-mobile.svg);
   background-color: $paleCyan;
-  width: 100%;
-  border: 2px solid black;
+  height: 1500px;
 }
 
 @mixin gridHeader {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-column-gap: 100%;
-  margin-left: 10%;
+  grid-column-gap: 15%;
+  margin-left: 8%;
+  position: relative;
+  bottom: -8%;
 }
 
 @mixin buttonHeader {
-  font-family: $bodyFont;
-  width: 170px;
-  height: 50px;
+  width: 240px;
+  height: 60px;
   border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
   background-color: #fff;
   color: #000;
+  font-weight: bold;
+  font-family: $bodyFont;
+  font-size: 18pt;
+  text-shadow: 1px 1px 1px #000;
+  outline: none;
+  &:hover{
+    background-color: $pinkColor;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+@mixin headerContent {
+  margin-top: 25%;
+  text-align: center;
+}
+
+@mixin headerTittle {
+  font-family: $tittleFont;
+  font-size: 48pt;
+}
+
+@mixin secondButton {
+  width: 570px;
+  height: 90px;
+  border-radius: 50px;
+  background-color: $pinkColor;
+  color: #fff;
+  font-family: $bodyFont;
+  font-weight: bold;
+  font-size: 22pt;
   outline: none;
 }
 
-// Includes
-@include mobile{
-  .header-section { @include headerSection; }
-  .grid-header { @include gridHeader; }
-  .button-header { @include buttonHeader; }
-  .footer-section { background-color: $grayBlue}
+@mixin headerImg {
+  max-width: 700px;
+  width: auto;
 }
 
-@include desktop{
+// Includes
+
   .header-section { @include headerSection; }
   .grid-header { @include gridHeader; }
   .button-header { @include buttonHeader; }
-  .footer-section { background-color: $grayBlue}
-}
+  .header-content { @include headerContent; }
+  .header-content p { font-size: 28pt; font-family: $bodyFont; text-align: center;}
+  .header-tittle { @include headerTittle; }
+  .second-button { @include secondButton; }
+  .header-image img { @include headerImg; }
