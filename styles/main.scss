@@ -81,6 +81,37 @@ $bodyFont: 'Open Sans', sans-serif;
   width: auto;
 }
 
+@mixin cardBox {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 85%;
+  height: 1050px;
+  margin-left: 8%;
+  margin-bottom: 10%;
+  border-radius: 30px;
+}
+
+@mixin mainImg {
+  max-width: 500px;
+  width: auto;
+  margin-top: 15%;
+}
+
+@mixin cardTittle {
+  font-family: $tittleFont;
+  font-size: 36pt;
+  font-weight: 600;
+  margin-top: 10%;
+  line-height: 1.5;
+}
+
+@mixin cardContent {
+  font-family: $bodyFont;
+  font-weight: lighter;
+  font-size: 28pt;
+  color: grey;
+}
+
 // Includes
 
   .header-section { @include headerSection; }
@@ -91,3 +122,7 @@ $bodyFont: 'Open Sans', sans-serif;
   .header-tittle { @include headerTittle; }
   .second-button { @include secondButton; }
   .header-image img { @include headerImg; }
+  .main-img { @include mainImg; }
+  .card-box { @include cardBox; }
+  .card-tittle { @include cardTittle; }
+  .card-content { @include cardContent; }
