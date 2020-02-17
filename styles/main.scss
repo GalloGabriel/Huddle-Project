@@ -18,6 +18,7 @@ $bodyFont: 'Open Sans', sans-serif;
 @mixin headerSection {
   background-image: url(../images/bg-hero-mobile.svg);
   background-color: $paleCyan;
+  overflow-x: hidden;
   height: 1500px;
 }
 
@@ -44,6 +45,7 @@ $bodyFont: 'Open Sans', sans-serif;
   &:hover{
     background-color: $pinkColor;
     color: #fff;
+    text-shadow: 1px 1px 1px #fff;
     cursor: pointer;
   }
 }
@@ -68,6 +70,10 @@ $bodyFont: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 22pt;
   outline: none;
+  &:hover{
+    background-color: $darkCyan;
+    cursor: pointer;
+  }
 }
 
 @mixin headerImg {

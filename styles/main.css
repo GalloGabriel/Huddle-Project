@@ -1,6 +1,7 @@
 .header-section {
   background-image: url(../images/bg-hero-mobile.svg);
   background-color: #ebfbff;
+  overflow-x: hidden;
   height: 1500px;
 }
 
@@ -28,6 +29,7 @@
 .button-header:hover {
   background-color: #ff52bf;
   color: #fff;
+  text-shadow: 1px 1px 1px #fff;
   cursor: pointer;
 }
 
@@ -57,6 +59,10 @@
   font-weight: bold;
   font-size: 22pt;
   outline: none;
+}
+.second-button:hover {
+  background-color: #00252e;
+  cursor: pointer;
 }
 
 .header-image img {
