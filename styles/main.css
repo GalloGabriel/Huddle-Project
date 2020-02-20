@@ -2,63 +2,66 @@
   background-image: url(../images/bg-hero-mobile.svg);
   background-color: #ebfbff;
   overflow-x: hidden;
-  height: 1500px;
+  height: 780px;
+  max-width: 100%;
 }
 
 .grid-header {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-column-gap: 15%;
-  margin-left: 8%;
+  margin-left: 5%;
   position: relative;
-  bottom: -8%;
+  bottom: -3%;
 }
 
 .button-header {
-  width: 240px;
-  height: 60px;
+  width: 110px;
+  height: 30px;
   border-radius: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
-  color: #000;
+  color: #00252e;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
-  font-size: 18pt;
-  text-shadow: 1px 1px 1px #000;
+  font-size: 10pt;
   outline: none;
 }
 .button-header:hover {
   background-color: #ff52bf;
   color: #fff;
-  text-shadow: 1px 1px 1px #fff;
   cursor: pointer;
 }
 
 .header-content {
-  margin-top: 25%;
+  margin-top: 30%;
   text-align: center;
 }
 
 .header-content p {
-  font-size: 28pt;
+  font-size: 13pt;
   font-family: "Open Sans", sans-serif;
   text-align: center;
+  color: #00252e;
+  line-height: 1.5;
 }
 
 .header-tittle {
   font-family: "Poppins", sans-serif;
-  font-size: 48pt;
+  font-size: 20pt;
+  line-height: 1.5;
+  color: #00252e;
 }
 
 .second-button {
-  width: 570px;
-  height: 90px;
+  width: 65%;
+  height: 40px;
   border-radius: 50px;
   background-color: #ff52bf;
   color: #fff;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
-  font-size: 22pt;
+  font-size: 10pt;
   outline: none;
 }
 .second-button:hover {
@@ -67,14 +70,14 @@
 }
 
 .second-button2 {
-  width: 500px;
-  height: 90px;
+  width: 55%;
+  height: 40px;
   border-radius: 50px;
   background-color: #ff52bf;
   color: #fff;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
-  font-size: 22pt;
+  font-size: 10pt;
   outline: none;
   margin-top: 15%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -84,13 +87,19 @@
   cursor: pointer;
 }
 
+.logo img {
+  max-width: 120px;
+  width: auto;
+  margin-top: 3%;
+}
+
 .header-image img {
-  max-width: 700px;
+  max-width: 80%;
   width: auto;
 }
 
 .main-img {
-  max-width: 500px;
+  max-width: 300px;
   width: auto;
   margin-top: 15%;
 }
@@ -99,7 +108,7 @@
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 90%;
-  height: 1050px;
+  height: 520px;
   margin-left: 5%;
   margin-bottom: 10%;
   border-radius: 30px;
@@ -107,7 +116,7 @@
 
 .card-tittle {
   font-family: "Poppins", sans-serif;
-  font-size: 36pt;
+  font-size: 18pt;
   font-weight: 600;
   margin-top: 10%;
   line-height: 1.5;
@@ -116,7 +125,7 @@
 .card-content {
   font-family: "Open Sans", sans-serif;
   font-weight: lighter;
-  font-size: 28pt;
+  font-size: 12pt;
   color: grey;
 }
 
@@ -124,7 +133,7 @@
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 90%;
-  height: 430px;
+  height: 185px;
   margin-top: 15%;
   margin-left: 5%;
   margin-bottom: -15%;
@@ -136,20 +145,29 @@
 
 .footer-tittle {
   font-family: "Poppins", sans-serif;
-  font-size: 32pt;
+  font-size: 15pt;
   font-weight: bold;
-  text-shadow: 0.5px 0.5px 0.5px #000;
   position: relative;
   bottom: -25%;
+  color: #00252e;
+}
+
+.icons-about {
+  margin-top: 7%;
+  margin-left: 3%;
+}
+
+.icones-footer {
+  width: 15px;
 }
 
 .footer {
   background-color: #00252e;
-  height: 2000px;
+  height: 900px;
 }
 
 .footer-img {
-  max-width: 400px;
+  max-width: 190px;
   width: auto;
   margin-top: 35%;
   margin-left: 3%;
@@ -158,7 +176,7 @@
 .content-footer {
   color: #fff;
   font-family: "Open Sans", sans-serif;
-  font-size: 34pt;
+  font-size: 13pt;
   font-weight: lighter;
   margin-left: 5%;
 }
@@ -166,7 +184,12 @@
 .lista-footer {
   list-style: none;
   font-family: "Open Sans", sans-serif;
-  font-size: 32pt;
+  font-size: 16pt;
+  margin-left: -6%;
+}
+
+.links-huddle {
+  margin-top: 10%;
 }
 
 .lista-footer a {
@@ -184,32 +207,32 @@
   margin-left: 27%;
   display: grid;
   grid-template-columns: 13% 13% 13%;
-  grid-column-gap: 7%;
+  grid-column-gap: 10%;
 }
 
 .circle {
   margin-left: 5%;
-  border: 3px solid #fff;
+  border: 1px solid #fff;
   border-radius: 50px;
-  width: 95px;
-  height: 95px;
+  width: 50px;
+  height: 50px;
   text-align: center;
 }
 .circle:hover {
   background-color: #ff52bf;
-  border: 3px solid #ff52bf;
+  border: 1px solid #ff52bf;
   cursor: pointer;
 }
 
 .last-div {
-  margin-top: 7%;
+  margin-top: 10%;
   text-align: center;
 }
 
 .last-content {
   font-family: "Open Sans", sans-serif;
   font-weight: lighter;
-  font-size: 24pt;
+  font-size: 10pt;
   color: #fff;
 }
 
