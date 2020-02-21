@@ -23,7 +23,7 @@ $bodyFont: 'Open Sans', sans-serif;
   background-image: url(../images/bg-hero-mobile.svg);
   background-color: $paleCyan;
   overflow-x: hidden;
-  height: 780px;
+  height: auto;
   max-width: 100%;
 }
 
@@ -221,7 +221,7 @@ $bodyFont: 'Open Sans', sans-serif;
 }
 
 @mixin lastDiv {
-  margin-top: 15%;
+  margin-top: 18%;
   text-align: center;
 }
 
@@ -252,7 +252,7 @@ $bodyFont: 'Open Sans', sans-serif;
   .footer-tittle { @include footerTittle; }
   .icons-about { @include iconAbout; }
   .icones-footer { @include iconesFooter; }
-  .footer{ background-color: $darkCyan; height: 850px;}
+  .footer{ background-color: $darkCyan; height: auto;}
   .footer-img { @include footerImg; }
   .content-footer { @include contentFooter; }
   .lista-footer { @include listaFooter; }
