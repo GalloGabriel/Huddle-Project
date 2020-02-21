@@ -21,6 +21,7 @@ $bodyFont: 'Open Sans', sans-serif;
 // Mixins
 @mixin headerSection {
   background-image: url(../images/bg-hero-mobile.svg);
+  background-repeat: space;
   background-color: $paleCyan;
   overflow-x: hidden;
   height: auto;
@@ -40,6 +41,7 @@ $bodyFont: 'Open Sans', sans-serif;
   margin-left: 5%;
   position: relative;
   bottom: -3%;
+  margin-top: 7%
 }
 
 @mixin buttonHeader {
@@ -62,7 +64,7 @@ $bodyFont: 'Open Sans', sans-serif;
 }
 
 @mixin headerContent {
-  margin-top: 30%;
+  margin-top: 17%;
   text-align: center;
 }
 

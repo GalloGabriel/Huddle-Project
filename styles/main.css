@@ -1,6 +1,7 @@
 @media (min-width: 0px) and (max-width: 440px) {
   .header-section {
     background-image: url(../images/bg-hero-mobile.svg);
+    background-repeat: space;
     background-color: #ebfbff;
     overflow-x: hidden;
     height: auto;
@@ -14,6 +15,7 @@
     margin-left: 5%;
     position: relative;
     bottom: -3%;
+    margin-top: 7%;
   }
 
   .button-header {
@@ -36,7 +38,7 @@
   }
 
   .header-content {
-    margin-top: 30%;
+    margin-top: 17%;
     text-align: center;
   }
 
