@@ -68,13 +68,13 @@ $bodyFont: 'Open Sans', sans-serif;
 
 @mixin headerTittle {
   font-family: $tittleFont;
-  font-size: 20pt;
+  font-size: 18pt;
   line-height: 1.5;
   color: $darkCyan;
 }
 
 @mixin headerContentP {
-  font-size: 13pt;
+  font-size: 11pt;
   font-family: $bodyFont;
   text-align: center;
   color: $darkCyan;

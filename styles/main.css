@@ -41,7 +41,7 @@
   }
 
   .header-content p {
-    font-size: 13pt;
+    font-size: 11pt;
     font-family: "Open Sans", sans-serif;
     text-align: center;
     color: #00252e;
@@ -50,7 +50,7 @@
 
   .header-tittle {
     font-family: "Poppins", sans-serif;
-    font-size: 20pt;
+    font-size: 18pt;
     line-height: 1.5;
     color: #00252e;
   }
