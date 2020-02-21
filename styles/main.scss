@@ -114,14 +114,14 @@ $bodyFont: 'Open Sans', sans-serif;
 }
 
 @mixin mainImg {
-  max-width: 300px;
+  max-width: 80%;
   width: auto;
   margin-top: 15%;
 }
 
 @mixin cardTittle {
   font-family: $tittleFont;
-  font-size: 18pt;
+  font-size: 16pt;
   font-weight: 600;
   margin-top: 10%;
   line-height: 1.5;
@@ -130,7 +130,7 @@ $bodyFont: 'Open Sans', sans-serif;
 @mixin cardContent {
   font-family: $bodyFont;
   font-weight: lighter;
-  font-size: 12pt;
+  font-size: 11pt;
   color: grey;
 }
 
@@ -207,7 +207,7 @@ $bodyFont: 'Open Sans', sans-serif;
 }
 
 @mixin circleSpan {
-  margin-left: 5%;
+  margin-left: 3.5%;
   border: 1px solid #fff;
   border-radius: 50px;
   width: 40px;
@@ -221,7 +221,7 @@ $bodyFont: 'Open Sans', sans-serif;
 }
 
 @mixin lastDiv {
-  margin-top: 10%;
+  margin-top: 15%;
   text-align: center;
 }
 
@@ -252,7 +252,7 @@ $bodyFont: 'Open Sans', sans-serif;
   .footer-tittle { @include footerTittle; }
   .icons-about { @include iconAbout; }
   .icones-footer { @include iconesFooter; }
-  .footer{ background-color: $darkCyan; height: 900px;}
+  .footer{ background-color: $darkCyan; height: 850px;}
   .footer-img { @include footerImg; }
   .content-footer { @include contentFooter; }
   .lista-footer { @include listaFooter; }
