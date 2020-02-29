@@ -15,12 +15,12 @@ $bodyFont: 'Open Sans', sans-serif;
 }
 
 @mixin desktop() {
-  @media (min-width: 441px) and (max-width: 1440px) {@content;}
+  @media (min-width: 441px) and (max-width: 1800px) {@content;}
 }
 
 // Mixins
-@mixin headerSection {
-  background-image: url(../images/bg-hero-mobile.svg);
+@mixin headerSection($bgImg) {
+  background-image: $bgImg;
   background-repeat: space;
   background-color: $paleCyan;
   overflow-x: hidden;
@@ -34,19 +34,25 @@ $bodyFont: 'Open Sans', sans-serif;
   margin-top: 3%;
 }
 
-@mixin gridHeader {
+@mixin headerLogoDesktop {
+  max-width: 180px;
+  width: auto;
+  margin-top: 1%;
+}
+
+@mixin gridHeader($marginTopGridHeader, $columnGap) {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-column-gap: 12%;
+  grid-column-gap: $columnGap;
   margin-left: 5%;
   position: relative;
   bottom: -3%;
-  margin-top: 7%
+  margin-top: $marginTopGridHeader;
 }
 
-@mixin buttonHeader {
-  width: 110px;
-  height: 30px;
+@mixin buttonHeader($widthButtonHeader, $heightButtonHeader) {
+  width: $widthButtonHeader;
+  height: $heightButtonHeader;
   border-radius: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
@@ -63,14 +69,24 @@ $bodyFont: 'Open Sans', sans-serif;
   }
 }
 
+@mixin gridDesktop {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 @mixin headerContent {
   margin-top: 17%;
   text-align: center;
 }
 
-@mixin headerTittle {
+@mixin headerContentDesktop {
+  margin-top: 18%;
+  margin-left: 10%;
+}
+
+@mixin headerTittle($fontSizeHeaderTittle) {
   font-family: $tittleFont;
-  font-size: 18pt;
+  font-size: $fontSizeHeaderTittle;
   line-height: 1.5;
   color: $darkCyan;
 }
@@ -83,9 +99,16 @@ $bodyFont: 'Open Sans', sans-serif;
   line-height: 1.5;
 }
 
-@mixin secondButton($widthSecondButton) {
+@mixin headerContentPDesktop {
+  font-size: 13pt;
+  font-family: $bodyFont;
+  color: $darkCyan;
+  line-height: 1.5;
+}
+
+@mixin secondButton($widthSecondButton, $heightSecondButton) {
   width: $widthSecondButton;
-  height: 40px;
+  height: $heightSecondButton;
   border-radius: 50px;
   background-color: $pinkColor;
   color: #fff;
@@ -100,8 +123,8 @@ $bodyFont: 'Open Sans', sans-serif;
   }
 }
 
-@mixin headerImg {
-  max-width: 80%;
+@mixin headerImg($mWidthHeaderImg) {
+  max-width: $mWidthHeaderImg;
   width: auto;
 }
 
@@ -236,16 +259,17 @@ $bodyFont: 'Open Sans', sans-serif;
 
 // Includes
 @include mobile{
-  .header-section { @include headerSection; }
-  .grid-header { @include gridHeader; }
-  .button-header { @include buttonHeader; }
+  .header-section { @include headerSection(url(../images/bg-hero-mobile.svg)); }
+  .grid-header { @include gridHeader(7%, 12%); }
+  .button-header { @include buttonHeader(110px, 30px); }
   .header-content { @include headerContent; }
   .header-content p { @include headerContentP; }
-  .header-tittle { @include headerTittle; }
-  .second-button { @include secondButton(65%); }
-  .second-button2 { @include secondButton(55%); margin-top: 15%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+  #header-content-desktop { display: none; }
+  .header-tittle { @include headerTittle(18pt); }
+  .second-button { @include secondButton(65%, 40px); }
+  .second-button2 { @include secondButton(55%, 40px); margin-top: 15%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
   .logo img { @include headerLogo; }
-  .header-image img { @include headerImg; }
+  .header-image img { @include headerImg(80%); }
   .main-img { @include mainImg; }
   .card-box { @include cardBox; }
   .card-tittle { @include cardTittle; }
@@ -264,4 +288,18 @@ $bodyFont: 'Open Sans', sans-serif;
   .circle { @include circleSpan; }
   .last-div { @include lastDiv; }
   .last-content { @include lastContent; }
+}
+
+@include desktop{
+  .header-section { @include headerSection(url(../images/bg-hero-desktop.svg)); }
+  .grid-header { @include gridHeader(3%, 27%); }
+  .button-header { @include buttonHeader(175px, 40px); }
+  .logo img { @include headerLogoDesktop; }
+  .grid-desktop { @include gridDesktop; }
+  .header-content { @include headerContentDesktop; }
+  .header-image img { @include headerImg(85%); margin-left: -22%; margin-top: -10%;}
+  .header-tittle { @include headerTittle(30pt); }
+  .header-content p { @include headerContentPDesktop; }
+  #header-content-mobile { display: none; }
+  .second-button { @include secondButton(40%, 50px); }
 }
