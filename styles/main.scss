@@ -128,12 +128,12 @@ $bodyFont: 'Open Sans', sans-serif;
   width: auto;
 }
 
-@mixin cardBox {
+@mixin cardBox($widthCardBox, $marginLeftCardBox) {
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 90%;
+  width: $widthCardBox;
   height: auto;
-  margin-left: 5%;
+  margin-left: $marginLeftCardBox;
   margin-bottom: 10%;
   border-radius: 30px;
 }
@@ -144,18 +144,34 @@ $bodyFont: 'Open Sans', sans-serif;
   margin-top: 15%;
 }
 
-@mixin cardTittle {
+@mixin mainImgDesktop {
+  max-width: 80%;
+  width: auto;
+  margin-top: -2%;
+}
+
+@mixin gridCardDesktop {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+@mixin cardPositionDesktop {
+  position: relative;
+  right: 100%;
+}
+
+@mixin cardTittle($marginTopCardTittle, $fontSizeCardTittle) {
   font-family: $tittleFont;
-  font-size: 16pt;
+  font-size: $fontSizeCardTittle;
   font-weight: 600;
-  margin-top: 10%;
+  margin-top: $marginTopCardTittle;
   line-height: 1.5;
 }
 
-@mixin cardContent {
+@mixin cardContent($fontSizeCardContent) {
   font-family: $bodyFont;
   font-weight: lighter;
-  font-size: 11pt;
+  font-size: $fontSizeCardContent;
   color: grey;
 }
 
@@ -271,9 +287,11 @@ $bodyFont: 'Open Sans', sans-serif;
   .logo img { @include headerLogo; }
   .header-image img { @include headerImg(80%); }
   .main-img { @include mainImg; }
-  .card-box { @include cardBox; }
-  .card-tittle { @include cardTittle; }
-  .card-content { @include cardContent; }
+  .card-box { @include cardBox(90%, 5%); }
+  .card-tittle { @include cardTittle(10%, 16pt); }
+  .card-content { @include cardContent(11pt); }
+  #card-content-desktop { display: none;}
+  #card-tittle-desktop { display: none;}
   .card-footer { @include cardFooter; }
   .footer-tittle { @include footerTittle; }
   .icons-about { @include iconAbout; }
@@ -302,4 +320,13 @@ $bodyFont: 'Open Sans', sans-serif;
   .header-content p { @include headerContentPDesktop; }
   #header-content-mobile { display: none; }
   .second-button { @include secondButton(40%, 50px); }
+  .card-box { @include cardBox(80%, 10%); }
+  .main-img { @include mainImgDesktop; }
+  .grid-card-desktop { @include gridCardDesktop; }
+  .card-position-desktop { @include cardPositionDesktop; }
+  .img-desktop-right { position: relative; left: 100%;}
+  .card-tittle { @include cardTittle(20%, 18pt);}
+  .card-content { @include cardContent(12pt); text-align: justify; line-height: 1.5;}
+  #card-content-mobile { display: none;}
+  #card-tittle-mobile { display: none;}
 }

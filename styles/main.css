@@ -139,6 +139,14 @@
     color: grey;
   }
 
+  #card-content-desktop {
+    display: none;
+  }
+
+  #card-tittle-desktop {
+    display: none;
+  }
+
   .card-footer {
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -341,6 +349,62 @@
   .second-button:hover {
     background-color: #00252e;
     cursor: pointer;
+  }
+
+  .card-box {
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    border-radius: 30px;
+  }
+
+  .main-img {
+    max-width: 80%;
+    width: auto;
+    margin-top: -2%;
+  }
+
+  .grid-card-desktop {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .card-position-desktop {
+    position: relative;
+    right: 100%;
+  }
+
+  .img-desktop-right {
+    position: relative;
+    left: 100%;
+  }
+
+  .card-tittle {
+    font-family: "Poppins", sans-serif;
+    font-size: 18pt;
+    font-weight: 600;
+    margin-top: 20%;
+    line-height: 1.5;
+  }
+
+  .card-content {
+    font-family: "Open Sans", sans-serif;
+    font-weight: lighter;
+    font-size: 12pt;
+    color: grey;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  #card-content-mobile {
+    display: none;
+  }
+
+  #card-tittle-mobile {
+    display: none;
   }
 }
 
