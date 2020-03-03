@@ -15,7 +15,7 @@ $bodyFont: 'Open Sans', sans-serif;
 }
 
 @mixin desktop() {
-  @media (min-width: 441px) and (max-width: 1800px) {@content;}
+  @media (min-width: 441px) and (max-width: 2000px) {@content;}
 }
 
 // Mixins
@@ -106,7 +106,7 @@ $bodyFont: 'Open Sans', sans-serif;
   line-height: 1.5;
 }
 
-@mixin secondButton($widthSecondButton, $heightSecondButton) {
+@mixin secondButton($widthSecondButton, $heightSecondButton, $fontSizeSecondButton) {
   width: $widthSecondButton;
   height: $heightSecondButton;
   border-radius: 50px;
@@ -114,7 +114,7 @@ $bodyFont: 'Open Sans', sans-serif;
   color: #fff;
   font-family: $bodyFont;
   font-weight: bold;
-  font-size: 10pt;
+  font-size: $fontSizeSecondButton;
   border-color: transparent;
   outline: none;
   &:hover{
@@ -175,57 +175,57 @@ $bodyFont: 'Open Sans', sans-serif;
   color: grey;
 }
 
-@mixin cardFooter {
+@mixin cardFooter($widthCardFooter, $marginLeftCardFooter, $marginBottomCardFooter, $heightCardFooter) {
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 90%;
-  height: 185px;
+  width: $widthCardFooter;
+  height: $heightCardFooter;
   margin-top: 15%;
-  margin-left: 5%;
-  margin-bottom: -15%;
+  margin-left: $marginLeftCardFooter;
+  margin-bottom: $marginBottomCardFooter;
   border-radius: 30px;
   position: relative;
   background-color: #fff;
   z-index: 1;
 }
 
-@mixin footerTittle {
+@mixin footerTittle($fontSizeFooterTittle) {
   font-family: $tittleFont;
-  font-size: 15pt;
+  font-size: $fontSizeFooterTittle;
   font-weight: bold;
   position: relative;
   bottom: -25%;
   color: $darkCyan;
 }
 
-@mixin footerImg {
-  max-width: 190px;
+@mixin footerImg($widthFooterImg, $marginTopFooterImg, $marginLeftFooterImg) {
+  max-width: $widthFooterImg;
   width: auto;
-  margin-top: 35%;
-  margin-left: 3%;
+  margin-top: $marginTopFooterImg;
+  margin-left: $marginLeftFooterImg;
 }
 
-@mixin contentFooter {
+@mixin contentFooter($marginLeftContentFooter) {
   color: #fff;
   font-family: $bodyFont;
   font-size: 13pt;
   font-weight: lighter;
-  margin-left: 5%;
+  margin-left: $marginLeftContentFooter;
 }
 
-@mixin iconAbout {
-  margin-top: 7%;
-  margin-left: 3%;
+@mixin iconAbout($marginTopIconAbout, $marginLeftIconAbout) {
+  margin-top: $marginTopIconAbout;
+  margin-left: $marginLeftIconAbout;
 }
 
 @mixin iconesFooter {
   width: 15px;
 }
 
-@mixin listaFooter {
+@mixin listaFooter($fontSize) {
   list-style: none;
   font-family: $bodyFont;
-  font-size: 16pt;
+  font-size: $fontSize;
   margin-left: -6%;
 }
 
@@ -239,12 +239,23 @@ $bodyFont: 'Open Sans', sans-serif;
   }
 }
 
-@mixin socialMedia {
-  margin-top: 13%;
-  margin-left: 27%;
+@mixin gridLinksHuddle {
   display: grid;
-  grid-template-columns: 13% 13% 13%;
+  grid-template-columns: 29% 29%;
   grid-column-gap: 10%;
+}
+
+@mixin gridFooterDesktop {
+  display: grid;
+  grid-template-columns: 40% 40% 40%;
+}
+
+@mixin socialMedia($columnGapSocialMedia, $templateColumnsSocialMedia, $marginTopSocialMedia, $marginLeftSocialMedia) {
+  margin-top: $marginTopSocialMedia;
+  margin-left: $marginLeftSocialMedia;
+  display: grid;
+  grid-template-columns: $templateColumnsSocialMedia ;
+  grid-column-gap: $columnGapSocialMedia;
 }
 
 @mixin circleSpan {
@@ -261,15 +272,15 @@ $bodyFont: 'Open Sans', sans-serif;
   }
 }
 
-@mixin lastDiv {
-  margin-top: 18%;
-  text-align: center;
+@mixin lastDiv($marginTopLastDiv, $textAlignLastDiv) {
+  margin-top: $marginTopLastDiv;
+  text-align: $textAlignLastDiv;
 }
 
-@mixin lastContent {
+@mixin lastContent($fontSizeLastContent) {
   font-family: $bodyFont;
   font-weight: lighter;
-  font-size: 10pt;
+  font-size: $fontSizeLastContent;
   color: #fff;
 }
 
@@ -282,8 +293,8 @@ $bodyFont: 'Open Sans', sans-serif;
   .header-content p { @include headerContentP; }
   #header-content-desktop { display: none; }
   .header-tittle { @include headerTittle(18pt); }
-  .second-button { @include secondButton(65%, 40px); }
-  .second-button2 { @include secondButton(55%, 40px); margin-top: 15%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+  .second-button { @include secondButton(65%, 40px, 10pt); }
+  .second-button2 { @include secondButton(55%, 40px, 10pt); margin-top: 15%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
   .logo img { @include headerLogo; }
   .header-image img { @include headerImg(80%); }
   .main-img { @include mainImg; }
@@ -292,20 +303,21 @@ $bodyFont: 'Open Sans', sans-serif;
   .card-content { @include cardContent(11pt); }
   #card-content-desktop { display: none;}
   #card-tittle-desktop { display: none;}
-  .card-footer { @include cardFooter; }
-  .footer-tittle { @include footerTittle; }
-  .icons-about { @include iconAbout; }
+  .card-footer { @include cardFooter(90%, 5%, -15%, 185px); }
+  .footer-tittle { @include footerTittle(15pt); }
+  .icons-about { @include iconAbout(7%, 3%); }
   .icones-footer { @include iconesFooter; }
   .footer{ background-color: $darkCyan; height: auto;}
-  .footer-img { @include footerImg; }
-  .content-footer { @include contentFooter; }
-  .lista-footer { @include listaFooter; }
+  .footer-img { @include footerImg(50%, 35%, 3%); }
+  .content-footer { @include contentFooter(5%); }
+  #content-footer-desktop { display: none;}
+  .lista-footer { @include listaFooter(16pt); }
   .links-huddle { margin-top: 10%;}
   .lista-footer a { @include linkList; }
-  .social-media { @include socialMedia; }
+  .social-media { @include socialMedia(10%, 13% 13% 13%, 13%, 27%); }
   .circle { @include circleSpan; }
-  .last-div { @include lastDiv; }
-  .last-content { @include lastContent; }
+  .last-div { @include lastDiv(18%, center); }
+  .last-content { @include lastContent(10pt); }
 }
 
 @include desktop{
@@ -319,8 +331,9 @@ $bodyFont: 'Open Sans', sans-serif;
   .header-tittle { @include headerTittle(30pt); }
   .header-content p { @include headerContentPDesktop; }
   #header-content-mobile { display: none; }
-  .second-button { @include secondButton(40%, 50px); }
+  .second-button { @include secondButton(40%, 50px, 10pt); }
   .card-box { @include cardBox(80%, 10%); }
+  #m-top-desktop { margin-bottom: 1.5%;}
   .main-img { @include mainImgDesktop; }
   .grid-card-desktop { @include gridCardDesktop; }
   .card-position-desktop { @include cardPositionDesktop; }
@@ -329,4 +342,21 @@ $bodyFont: 'Open Sans', sans-serif;
   .card-content { @include cardContent(12pt); text-align: justify; line-height: 1.5;}
   #card-content-mobile { display: none;}
   #card-tittle-mobile { display: none;}
+  .card-footer { @include cardFooter(45%, auto, -10%, 235px); margin-right: auto;}
+  .second-button2 { @include secondButton(55%, 65px, 12pt); margin-top: 10%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+  .footer-tittle { @include footerTittle(20pt); }
+  .footer{ background-color: $darkCyan; height: auto;}
+  .footer-img { @include footerImg(20%, 15%, 7%); }
+  .icons-about { @include iconAbout(5%, 7%); }
+  .content-footer { @include contentFooter(1.5%); }
+  #content-footer-mobile { display: none;}
+  .lista-footer a { @include linkList; }
+  .lista-footer { @include listaFooter(15pt); }
+  .links-huddle { @include gridLinksHuddle; margin-top: 3%;}
+  .grid-footer-desktop { @include gridFooterDesktop; }
+  .margin-top-link-footer { margin-top: 10%;}
+  .social-media { @include socialMedia(3%, 6% 6% 6%, 7%, -15%); }
+  .circle { @include circleSpan; }
+  .last-div { @include lastDiv(2%, right); margin-right: 4%;}
+  .last-content { @include lastContent(10.5pt); }
 }
