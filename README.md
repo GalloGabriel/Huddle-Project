@@ -6,7 +6,7 @@
 
 Thanks for checking out this front-end coding challenge.
 
-This challenge was developed with HTML knowledge and styles were created using SASS compiled for CSS.
+This challenge was developed with HTML knowledge and styles were created using SASS compiled to CSS.
 
 
 This is a responsive landing page that features 2 versions: mobile and desktop
